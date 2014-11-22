@@ -22,7 +22,8 @@
         <div class="panel-heading">Review Sample Questions</div>
         <table class="table table-bordered">
           <tr ng-repeat='thing in awesomeThings'>
-            <td>{{thing.name}}</td>
+            <!-- <td>Question #{{thing.number}}</td> -->
+            <td><a href="questions/{{thing._id}}">Question #{{thing.number}}</a></td>
           </tr>
         </table>
       </div>      
@@ -47,7 +48,7 @@
       </span>
     </p>
   </form> -->
-  
+
 </div>
 
 <footer class="footer">
