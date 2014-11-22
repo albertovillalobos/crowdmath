@@ -1,3 +1,38 @@
-<div class="col-md-12">
-This is the questions view.
+<div class="container">  
+  <div class="jumbotron text-center">
+    <h1 class='thin'>Math 160 Study Group</h1>
+    <h2 class='thin'>Review 3</h2>
+    <h3 class='thin'>Question #{{question.number}}</h2>
+  </div>
+
+
+
+  <div class='row'>
+    <div class='col-lg-3' ng-repeat='solution in solutions'>
+      Solution: {{solution.name}}
+    </div>
+  </div>
+
+  <!-- Form to add solutions -->
+  <div class='row'>
+    <div class='col-lg-8 col-lg-offset-2'>
+      <form>
+        <p class="input-group">
+          <input type="text" class="form-control" placeholder="Add new solution" ng-model="newSolution">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" ng-click='addSolution(question.number)'>Add Solution</button>
+          </span>
+        </p>
+      </form>      
+    </div>
+  </div>
+
 </div>
+
+<footer class="footer">
+  <div class="container">
+      <p>CrowdMath by <a href='htpp://albertovillalobos.me'>Alberto Villalobos</a> |
+        <a href="https://twitter.com/albertoisaacv">@albertoisaacv</a> |
+         <a href="https://github.com/albertovillalobos">Github</a></p>
+  </div>
+</footer>

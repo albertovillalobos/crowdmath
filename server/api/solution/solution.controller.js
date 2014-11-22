@@ -11,6 +11,11 @@ exports.index = function(req, res) {
   });
 };
 
+//Gets list of solutions belonging to specific question
+// exports.getByQuestionId) = function(req, res) {
+//   Solution.find({ question: req.params.id})
+// }
+
 // Get a single solution
 exports.show = function(req, res) {
   Solution.findById(req.params.id, function (err, solution) {
@@ -19,6 +24,24 @@ exports.show = function(req, res) {
     return res.json(solution);
   });
 };
+// getByQuestionId
+exports.getByQuestionId = function(req, res) {
+
+  Solution.find({question: req.params.id}, function (err, solutions) {
+    // If found errors
+    if (err) {
+      return handleError(res, err);
+    }
+
+    // If didn't find any solutions
+    if(!solutions) { 
+      return res.send(404);
+    }
+
+    return res.json(solutions);
+
+  });
+}
 
 // Creates a new solution in the DB.
 exports.create = function(req, res) {

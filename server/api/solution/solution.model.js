@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
 var SolutionSchema = new Schema({
   name: String,
   info: String,
-  active: Boolean
+  active: Boolean,
+  question: Number
 });
 
 module.exports = mongoose.model('Solution', SolutionSchema);
